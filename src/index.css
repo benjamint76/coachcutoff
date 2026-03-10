@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-field: #2d6a4f;
+  --color-field-light: #40916c;
+  --color-dirt: #c2a06e;
+  --color-navy: #1a2744;
+  --color-navy-light: #243463;
+  --color-gold: #f5a623;
+  --color-gold-light: #ffc655;
+  --color-base-cream: #f8f0e3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+/* Dashed animated throw path for SVG diagrams */
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.throw-path {
+  stroke-dasharray: 8 4;
+  stroke-dashoffset: 400;
+  animation: dash 1.2s ease-out forwards;
+}
+
+.throw-path-delayed {
+  stroke-dasharray: 8 4;
+  stroke-dashoffset: 400;
+  animation: dash 1.4s ease-out 0.9s forwards;
+}

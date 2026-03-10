@@ -1,0 +1,98 @@
+export const QUESTIONS = [
+  {
+    id: 1,
+    question: 'What is the main job of the cutoff man?',
+    options: [
+      'Hit the ball far',
+      'Catch the outfielder\'s throw and redirect it to the right base',
+      'Run to first base as fast as possible',
+      'Stand near the pitcher\'s mound',
+    ],
+    correct: 1,
+    explanation: 'The cutoff man stands between the outfielder and the target base. He catches the throw and quickly redirects it — like a relay runner passing a baton!',
+  },
+  {
+    id: 2,
+    question: 'Why is it faster to use a cutoff man instead of one long throw?',
+    options: [
+      'It isn\'t faster — one long throw is always better',
+      'Two shorter throws travel faster than one long throw',
+      'The cutoff man can run faster than the ball',
+      'The rules say you must use a cutoff',
+    ],
+    correct: 1,
+    explanation: 'Two shorter throws from closer range are both faster and more accurate than one long wobbly throw from deep in the outfield.',
+  },
+  {
+    id: 3,
+    question: 'Ball is hit to LEFT FIELD. Nobody is on base. Where should the cutoff throw?',
+    options: [
+      'Home plate',
+      'Third base',
+      'Second base',
+      'First base',
+    ],
+    correct: 2,
+    explanation: 'With nobody on, the batter is running to first and maybe pushing for second. The cutoff (usually the SS) throws to 2nd to try to stop the batter from getting a double.',
+  },
+  {
+    id: 4,
+    question: 'Ball is hit to RIGHT FIELD. There\'s a runner on 3rd base. Where should the cutoff throw?',
+    options: [
+      'Second base',
+      'Third base',
+      'First base',
+      'Home plate',
+    ],
+    correct: 3,
+    explanation: 'A runner on 3rd will score easily on a ball to right field. The cutoff should fire home to try to get the out at the plate!',
+  },
+  {
+    id: 5,
+    question: 'Your teammate on the field yells "CUT!" to you. What does that mean?',
+    options: [
+      'Cut the grass on the field',
+      'Stop running and wait',
+      'Intercept (catch) the throw — don\'t let it go through',
+      'Cut to the dugout',
+    ],
+    correct: 2,
+    explanation: '"CUT!" means your teammates see the play and want you to catch the ball and make a different throw. They\'ll usually follow it with a base: "CUT TWO!" or "CUT HOME!"',
+  },
+  {
+    id: 6,
+    question: 'Who is usually the cutoff man on a ball hit to LEFT FIELD?',
+    options: [
+      'The first baseman (1B)',
+      'The shortstop (SS)',
+      'The catcher (C)',
+      'The pitcher (P)',
+    ],
+    correct: 1,
+    explanation: 'The shortstop (SS) lines up as the cutoff on balls to left field because they\'re already positioned on the left side of the infield.',
+  },
+  {
+    id: 7,
+    question: 'How high should you aim your relay throw to make it easy to catch and tag?',
+    options: [
+      'Ground level — bounce it in',
+      'Over the fielder\'s head',
+      'Chest high',
+      'As high as possible',
+    ],
+    correct: 2,
+    explanation: 'Chest-high throws are easiest to catch AND tag with quickly. A bouncing throw slows everything down, and an overthrow lets runners advance!',
+  },
+  {
+    id: 8,
+    question: 'Ball is hit to CENTER FIELD. There\'s a runner on 2nd base. What\'s the best decision for the cutoff?',
+    options: [
+      'Throw to first base',
+      'Hold the ball and don\'t throw',
+      'Throw to home plate',
+      'Throw to second base',
+    ],
+    correct: 2,
+    explanation: 'A runner on 2nd base will likely try to score on a ball to center field. The cutoff should fire home to try to get the out — every run matters!',
+  },
+]
