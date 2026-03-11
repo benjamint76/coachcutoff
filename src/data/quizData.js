@@ -44,8 +44,8 @@ export const QUESTIONS = [
       'First base',
       'Home plate',
     ],
-    correct: 3,
-    explanation: 'A runner on 3rd will score easily on a ball to right field. The cutoff should fire home to try to get the out at the plate!',
+    correct: 0,
+    explanation: 'With a runner on 3rd, the defense should focus on holding the batter to second base. The cutoff should throw to 2nd to prevent the extra base.',
   },
   {
     id: 5,
