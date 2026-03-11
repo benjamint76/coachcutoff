@@ -15,9 +15,9 @@ const DEFAULT_POSITIONS = {
   CF:  { x: 150, y: 35  },  // center field
   RF:  { x: 238, y: 72  },  // right field
   SS:  { x: 125, y: 145 },  // shortstop
-  '2B':{ x: 177, y: 145 },  // second baseman
-  '1B':{ x: 210, y: 195 },  // first baseman
-  '3B':{ x: 90,  y: 195 },  // third baseman
+  '2B':{ x: 187, y: 145 },  // second baseman
+  '1B':{ x: 210, y: 175 },  // first baseman
+  '3B':{ x: 100,  y: 165 },  // third baseman
   P:   { x: 150, y: 190 },  // pitcher
   C:   { x: 150, y: 262 },  // catcher
 }
@@ -40,7 +40,7 @@ function ThrowPath({ from, to, color, delay = 0 }) {
         stroke={color} strokeWidth="2.5" strokeDasharray="7 4"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 0.8, delay, ease: 'easeOut' }}
+        transition={{ duration: 1.1, delay, ease: 'easeOut' }}
       />
       <motion.polygon
         points={`${to.x},${to.y} ${ax + nx},${ay + ny} ${ax - nx},${ay - ny}`}
@@ -159,10 +159,10 @@ function BaseballField({ scenario, animKey, playKey }) {
       {/* Throw paths — animated after players appear */}
       <AnimatePresence mode="wait">
         <motion.g key={animKey + '-paths'}>
-          {/* Outfield → Cutoff */}
-          <ThrowPath from={ballPos} to={cutoffPos} color="#e63946" delay={0.6} />
-          {/* Cutoff → target base */}
-          <ThrowPath from={cutoffPos} to={decision.base} color="#1a2744" delay={1.5} />
+          {/* Outfield → Cutoff (starts after players finish moving ~1.8s) */}
+          <ThrowPath from={ballPos} to={cutoffPos} color="#e63946" delay={2.0} />
+          {/* Cutoff → target base (starts after first throw finishes ~1.1s draw + arrowhead) */}
+          <ThrowPath from={cutoffPos} to={decision.base} color="#1a2744" delay={3.3} />
         </motion.g>
       </AnimatePresence>
 
@@ -174,7 +174,7 @@ function BaseballField({ scenario, animKey, playKey }) {
           fill="none" stroke="#f5a623" strokeWidth="2" strokeDasharray="4 3"
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 2.2, duration: 0.4 }}
+          transition={{ delay: 4.6, duration: 0.5 }}
         />
       </AnimatePresence>
     </svg>
@@ -242,8 +242,8 @@ export default function PositioningDiagram() {
 
   // animKey includes playCount so throw paths + ball also re-animate on Replay
   const animKey      = `${ballId}-${runnerId}-${playCount}`
-  // playKey drives player re-entry: changes on ball switch OR replay, NOT on runner change
-  const playKey      = `${ballId}-${playCount}`
+  // playKey drives player re-entry: changes on ball switch, runner change, OR replay
+  const playKey      = `${ballId}-${runnerId}-${playCount}`
   const runnerConfig = RUNNER_CONFIGS.find(r => r.id === runnerId)
   const scenario     = buildScenario(ballId, runnerConfig)
 
